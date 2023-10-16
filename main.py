@@ -80,8 +80,34 @@ class Tomhardy:
 introduce2 = Tomhardy.adding_things2(2, 3)
 print(introduce2)
 
-include underscore in variable name to indicate private variable
+# include underscore in variable name to indicate private variable
 # inheritance
 class User():
     def sign_in(self):
         print("logged in")
+
+
+class toms:
+    def sayhello(self):
+        print("hello there")
+
+class wizzard(User, toms):
+    def __init__(self, name, power):
+        self.name = name
+        self.power = power
+
+    def attack(self):
+        print("attacking with power of {}".format(self.power))
+
+
+class archer(wizzard):
+    def __init__(self, simp, User, toms):
+        super().__init__(User, toms)
+    def timmy(self):
+        print("timmy is done")
+
+
+wizard1 = wizzard("james", 50)
+archer1 = archer("timmy", 30)
+print(wizard1.sayhello())
+print(archer1.sign_in())
