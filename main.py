@@ -155,20 +155,42 @@
 # hello("sean")
 # # i do not need to pass in the decorator since im just using the function
 
-from time import time
-def perfomance(fn):
-    def wrapper(*args, **kargs):
-        t1 = time()
-        result = fn(*args, **kargs)
-        t2 = time()
-        print("it took {} s long".format(t2- t1))
-        return result
-    return wrapper
+# from time import time
+# def perfomance(fn):
+#     def wrapper(*args, **kargs):
+#         t1 = time()
+#         result = fn(*args, **kargs)
+#         t2 = time()
+#         print("it took {} s long".format(t2- t1))
+#         return result
+#     return wrapper
+#
+# @perfomance
+# def long_time():
+#     for i in range(10000000):
+#         i * 5
+#
+# long_time()
+#
+# try:
+#     venmo = 0
+#     print(23/venmo)
+# except ZeroDivisionError as err:
+#     print("you have a zero division error")
+#     print(err)
+# finally:
+#     print("done it")
+#
 
-@perfomance
-def long_time():
-    for i in range(10000000):
-        i * 5
+def checking_on():
+    yield 1
+    yield 2
+    yield 3
+    return 23
 
-long_time()
-
+gen = checking_on()
+# print(gen)
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
